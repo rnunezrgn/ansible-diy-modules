@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  #user: awx
+
+  tasks:
+    - name: Check if user exists
+      action: check_user username=rnunez
+      register: user
+
+    - debug: msg="The name of {{ user.msg }}"

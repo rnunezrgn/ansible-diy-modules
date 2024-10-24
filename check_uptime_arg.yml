@@ -1,0 +1,10 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Check uptime
+      action: chkuptime-arg detailed=true
+      register: uptime
+
+    - debug: var=uptime
